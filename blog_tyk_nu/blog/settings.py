@@ -54,9 +54,10 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 LANGUAGE_CODE = 'en-us'
+DATETIME_FORMAT = 'd. b Y H:i e'
 TIME_ZONE = 'UTC'
-USE_I18N = True
-USE_L10N = True
+USE_I18N = False
+USE_L10N = False
 USE_TZ = True
 
 
@@ -104,3 +105,4 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
