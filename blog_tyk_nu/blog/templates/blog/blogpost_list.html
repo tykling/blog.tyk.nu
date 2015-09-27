@@ -30,15 +30,24 @@
                     <hr>
                 {% endfor %}
 
+            {% if is_paginated %}
                 <!-- Pager -->
-                <ul class="pager">
-                    <li class="previous">
-                        <a href="#">&larr; Older</a>
-                    </li>
-                    <li class="next">
-                        <a href="#">Newer &rarr;</a>
-                    </li>
-                </ul>
+                <div class="pagination">
+                    <span class="page-links">
+                        {% if page_obj.has_previous %}
+                            <a href="?page={{ page_obj.previous_page_number }}">&larr; previous</a>
+                        {% endif %}
+                        <span class="page-current">
+                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                        </span>
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}">next &rarr;</a>
+                        {% endif %}
+                    </span>
+                </div>
+            {% else %}
+                <p><i>Showing {{ blogpost_list.count }} of {{ blogpost_list.count }} blogposts</i></p>
+            {% endif %}
             </div>
 
             <!-- Blog Sidebar Widgets Column -->
