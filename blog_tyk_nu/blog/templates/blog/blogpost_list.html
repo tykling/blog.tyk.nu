@@ -45,17 +45,7 @@
             <div class="col-md-4">
 
                 <!-- Blog Search Well -->
-                <div class="well">
-                    <h4>Search this blog</h4>
-                    <div class="input-group">
-                        <input type="text" class="form-control">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        </span>
-                    </div> <!-- /.input-group -->
-                </div>
+                {% include 'searchpanel.html' %}
 
                 <!-- Blog Categories Well -->
                 <div class="well">
@@ -65,7 +55,7 @@
                     {% get_taglist as tags %}
                     <div class="text-center">
                     {% for tag in tags %}
-                    <font size={{tag.num_times|floatformat:0|add:"1"}}>{{tag}}</font>
+                    <a href="{% url 'tag_lookup' slug=tag.slug %}"><font size={{tag.num_times|floatformat:0|add:"2"}}><span class="label label-primary">{{tag}}</span></font></a>
                     {% endfor %}
                     </div>
                     </p>

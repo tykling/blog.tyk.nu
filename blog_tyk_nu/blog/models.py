@@ -19,7 +19,7 @@ class BlogPost(models.Model):
         return unicode(self.title)
 
     def get_absolute_url(self):
-        return reverse('view_blogpost', kwargs={'pk': self.pk})
+        return reverse('blogpost_detail', kwargs={'slug': self.slug})
 
     def save(self, *args, **kwargs):
         ### set/update slug
