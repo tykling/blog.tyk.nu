@@ -15,7 +15,7 @@ class BlogPost(models.Model):
     modified_date = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=100)
     body = models.TextField()
-    slug = models.SlugField(blank=True)
+    slug = models.SlugField(blank=True, max_length=100)
     published = models.BooleanField(default=True)
     tags = TaggableManager()
 
