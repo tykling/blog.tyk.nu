@@ -26,4 +26,4 @@ DATABASES = {
 DEBUG={{ django_debug }}
 
 # admin site prefix
-ADMIN_PREFIX='{{ django_admin_site_prefix }}'
+ADMIN_PREFIX='{{ django_admin_prefix }}'
