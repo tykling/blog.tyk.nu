@@ -17,7 +17,8 @@ def tag_lookup(request, slug):
 
 
 class BlogPostList(ListView):
-    model = BlogPost
+    # set queryset to the manager is used
+    queryset = BlogPost.objects.all()
     paginate_by = 25
 
 
